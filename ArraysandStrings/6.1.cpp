@@ -31,7 +31,7 @@ void dutch_national_flag(vector<T> &A, int &pivot_index)
             equal++;
         }
         else if (A[equal] > pivot){
-            swap(A[larger--], A[equal])
+            swap(A[larger--], A[equal]);
         }
     }
     // Explanation:
