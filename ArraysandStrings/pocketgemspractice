@@ -1,0 +1,65 @@
+substring start pointer
+
+int findFirstinstance(string &source;  string &search){
+  int srclen = source.size();
+  int searchlen = search.size();
+
+  if (searchlen > srclen){
+    return -1;
+  }
+
+
+  for(int i = 0; i < srclen ; i++){
+      int j = 0;
+      if(search[j] == source[i] ){
+          j++;
+          int k = j;
+          while( k < searchlen && i < srclen){
+              if(search[k] == source[i]){
+                  k++;
+                  i++;
+              }
+              else
+                break;
+          }
+          if(k ==  searchlen){
+            return j;
+          }
+          else
+            continue;
+      }
+  }
+  return -1;
+
+}
+
+
+// Deep COpy a graph
+
+  A
+ B  C - E
+   D
+
+Node DeepCopy(Node &abc){
+    unordered_map<Node, Node> mapping = {};
+    if (abc == NULL)
+      return;
+    Node retNode = deepCopygraph(abc, mapping)
+
+}
+
+Node deepCopyGraph(Node &abc, unordered_map<Node, Node> &mapping){
+    if(mapping.find(abc) != mapping.end()){
+          return mapping[abc];
+    }
+    else{
+        Node newNode = new Node();
+        mapping.insert(abc, NewNode);
+        int length =  abc->ConnectedList.size();
+        std::vector<Node>::iterator i ;
+        for (it = abc->Connected.begin();  it < connected.end(); it++){
+            newNode->Connected.push_back(deepCopyGraph(it, mapping));
+        }
+        return newNode;
+    }
+}
