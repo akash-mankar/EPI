@@ -1,0 +1,26 @@
+Initializer Lists:
+==================
+
+1. Why should you using initializer list as opposed to normal initialization.
+answer:
+a) const data members: Must be initialized using initializer list
+b) reference data members: int &a. Must be initialized using initializer list
+c) initializing base class data members
+if a Class A doesnt have a default constructor and it is a data member for class B, then class A must be initialized using initializer list in class B's constructor
+class A
+{
+    A(int x){
+
+    }
+}
+
+class B : A
+{
+  A a;
+  B(int x): a(x){
+
+  }
+
+}
+d) when constructor's parameter name is same as data member
+e) Performance reasons

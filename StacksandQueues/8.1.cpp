@@ -39,3 +39,15 @@ class Stack{
   private:
     std::stack<pair<T,T>> _s;
 };
+
+// 2nd SOlution:
+/*
+  This is using an auxillary stack made of pairs.
+  pair.element.second represents number of times the max element occurs in the
+  parent stack
+  This is usually to decrease best case space complexity to O(1)
+  WOrst case is O(n)
+
+  While in our first solution both the best case and worst case is O(n) additional
+  space
+*/
