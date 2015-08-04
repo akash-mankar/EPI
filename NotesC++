@@ -1,3 +1,23 @@
+Random useful syntax:
+1. Initializing a vector:
+vector<int> _data;
+_data({10})
+
+2. Using a templatized node with shared_ptr.
+shared_ptr<Node<T>>
+
+3. Numeric limits of basic arithmetic data types
+   std::numeric_limits<unsigned>::max()
+   std::numeric_limits<unsigned>::min()
+
+4. log10() Gives you number of digits in a decimal number
+e.g. log (100000) = 5, number of digits =  5 + 1 = 6;
+
+5. throw length_error();
+   throw invalid_argument();
+
+6. Use stack.emplace to push on to stack without basic data types.
+
 Initializer Lists:
 ==================
 
@@ -24,3 +44,16 @@ class B : A
 }
 d) when constructor's parameter name is same as data member
 e) Performance reasons
+
+
+Trees :
+======
+1. A Full binary tree: All nodes except non leaf nodes have two children
+Also all non leaf nodes in a full binary tree are one less than the leaf nodes.
+(can be proved by induction)
+
+2. Similarly a perfect binary tree contains a total of 2^(h+1) - 1 nodes.
+h being the height. out of which 2^h are leaf nodes.
+
+When traversing a tree recursively, time complexity is O(n)
+But space complexity is O(h) because at any point maximum nodes stored on the system stack would be <= h.
