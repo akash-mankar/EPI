@@ -40,6 +40,13 @@ sp1.reset(new int(50));
 
 10. crbegin() crend() when you want const iterator but reverse
 
+11. unordered set stores only unique elements.
+so every element has "second " field which is a boolean which is set to true first time you insert the element.
+it becomes false when next time someone else tries to insert the same element again.
+very cool feature to figure out if the element exists already.
+unordered_set<int> t
+t.emplace(3).second == false;
+
 Initializer Lists:
 ==================
 
