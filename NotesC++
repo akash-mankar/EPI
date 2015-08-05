@@ -16,7 +16,29 @@ e.g. log (100000) = 5, number of digits =  5 + 1 = 6;
 5. throw length_error();
    throw invalid_argument();
 
-6. Use stack.emplace to push on to stack without basic data types.
+6. Use stack.emplace to push on to stack without basic data types.'
+
+7. Calling a templatized function.
+If tempalte arugments can be deduced then don't need to specify data type
+calculate<int>(5) is same as calculate(5);
+however if you intend to have int as double then you should specify it
+calculate<double>(5)
+
+In EPI, some times a function is called like this
+function_call<T>(arg1, arg2)
+
+8. shared_ptr
+in order to make a shared_ptr you should use
+make_shared<ObjectType> T;
+e.g. vector<shared_ptr<Node<T>>  abc;
+abc.push_back(make_shared<Node<T>>)
+
+Other function is shared_ptr<int> sp1;
+sp1.reset(new int(50));
+
+9. cbegin() cend() when the iterator is const;
+
+10. crbegin() crend() when you want const iterator but reverse
 
 Initializer Lists:
 ==================
@@ -57,3 +79,27 @@ h being the height. out of which 2^h are leaf nodes.
 
 When traversing a tree recursively, time complexity is O(n)
 But space complexity is O(h) because at any point maximum nodes stored on the system stack would be <= h.
+If we have parent field then we only need O(1) space.
+
+3. A tree is considered balanced only if the difference in the height between left and right subtrees at a particular node n is at most one.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-
