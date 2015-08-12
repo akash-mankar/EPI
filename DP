@@ -1,0 +1,10 @@
+1. Maximum subarray problem:
+a) kadane's algorithm:
+  curr_max = max(A[i], cur_max+A[i]);
+  overallmax = max(overallmax, curr_max);
+
+2.  Maximum subarray in a circular array
+a) calculate regular max sum using kadane
+b) find minimum subarray and remaining elements yield a subarray that wraps around;
+  Total sum - minimum subarray
+c) max(a, b)  

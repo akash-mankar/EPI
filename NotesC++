@@ -2,6 +2,7 @@ Random useful syntax:
 1. Initializing a vector:
 vector<int> _data;
 _data({10})
+Also vector<int>idx(4, 100) // 4 elements initialized to 100.
 
 2. Using a templatized node with shared_ptr.
 shared_ptr<Node<T>>
@@ -46,6 +47,35 @@ it becomes false when next time someone else tries to insert the same element ag
 very cool feature to figure out if the element exists already.
 unordered_set<int> t
 t.emplace(3).second == false;
+
+12. make_heap(v.begin(), v.end());
+    pop_heap();
+    push_heap();
+    sort_heap();
+
+13. vector.end() points to an index after the last element
+hence while using
+v.emplace_back(a.begin(), a.end()); works fine, a is another vector
+but
+v.emplace_back(a.begin() + idx, a.begin() + i); here i = the index you are trying to achieve +1.
+
+14. istringstream for streaming incoming sequence
+istringstream sin
+T x; // x can be of anytype. if the conversion fails you could use if (sin.fail()) check
+while(sin >> x)
+{
+
+}
+
+15. unoredered_set can also take a tuple instead of single element.
+unordered_Set<tuple<int,int,int>, HashTuple>  cache
+in this case you need to implement Hashtuple
+
+16. iota(v.begin(), v.end, 0);
+v = 0 ,1, 2, 3, ,4, 5, ,,,, till v.end()
+
+17, string::substr
+// syntax  s.substr(3, 5) where 3 = starting index. 5 = number of letters after index 3 inclusive
 
 Initializer Lists:
 ==================
