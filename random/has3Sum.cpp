@@ -12,7 +12,7 @@ bool has_2_sum(vector<int> &A, int t)
 			j++;
 		else     // A[j] + A[k] > t
 			k--;
-}
+	}
 
 	return false;
 }
@@ -29,7 +29,7 @@ bool has_3_sum(vector<int> &A, int t)
 			l++;
 		else
 			r--;
-}
+  }
 }
 
 // Note that we didn’t call has2_sum from has_3_sum with sum = t - A[i]
