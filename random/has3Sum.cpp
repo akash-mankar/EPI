@@ -22,7 +22,7 @@ bool has_3_sum(vector<int> &A, int t)
 	for(int i = 0; i < A.size()-2; i++)
 	{
 		int l = i+1;
-		int r = A.size();
+		int r = A.size()-1;
 		if(A[i]+A[l]+A[r] == t)
 			return true;
 		else if (A[i]+A[l]+A[r] < t)
